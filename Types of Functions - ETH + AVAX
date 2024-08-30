@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+//Requirment:- write a smart contract to create your own ERC20 token//
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract SimpleToken is ERC20 {
+    constructor() ERC20("domain", "dom") {
+        // Mint 100 tokens to the contract deployer
+        _mint(msg.sender, 100 * 10 ** decimals());
+    }
+}
